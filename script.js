@@ -1,15 +1,10 @@
+//your JS code here. If requir
 document.addEventListener("DOMContentLoaded", () => {
-  const form = document.getElementById("myForm");
-  if (form) {
-    form.addEventListener("submit", handleSubmit);
-  } else {
-    console.error("Form element not found!");
-  }
+  const displayBtn = document.getElementById("btn");
+  displayBtn.addEventListener("click", displayTextWithDelay);
 });
 
-async function handleSubmit(event) {
-  event.preventDefault();
-
+async function displayTextWithDelay() {
   const textInput = document.getElementById("text").value;
   const delayInput = document.getElementById("delay").value;
 
@@ -21,15 +16,10 @@ async function handleSubmit(event) {
 
   // Display a loading message
   const outputDiv = document.getElementById("output");
-  if (outputDiv) {
-    outputDiv.textContent = "Loading...";
-  } else {
-    console.error("Output element not found!");
-    return;
-  }
+  outputDiv.textContent = "Loading...";
 
   try {
-    await delay(parseInt(delayInput)); // Wait for the specified delay
+    await delay(delayInput); // Wait for the specified delay
     outputDiv.textContent = textInput; // Display the text
   } catch (error) {
     console.error("An error occurred:", error);

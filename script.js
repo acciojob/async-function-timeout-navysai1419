@@ -1,4 +1,3 @@
-//your JS code here. If requir
 document.addEventListener("DOMContentLoaded", () => {
   const displayBtn = document.getElementById("btn");
   displayBtn.addEventListener("click", displayTextWithDelay);
